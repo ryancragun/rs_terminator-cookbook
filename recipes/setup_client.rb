@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rs_terminator-cookbook
+# Cookbook Name:: rs_terminator
 # Recipe:: setup_client
 #
 # Copyright (C) 2013 Ryan_Cragun
@@ -22,4 +22,4 @@ rightscale_marker
 tags = node[:rs_terminator][:client][:safe_tag]
 
 log "Setting rs_terminator safety tag(s): #{tags.inspect}"
-tags.is_a?(Array) ? (tags.each {|tag| right_link_tag (tag)}) : right_link_tag(tags)
+tags.is_a?(Array) ? (tags.each {|tag| right_link_tag(tag)}) : right_link_tag(tags)
