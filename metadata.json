@@ -1,0 +1,50 @@
+{
+  "name": "rs_terminator",
+  "description": "Installs/Configures rs_terminator",
+  "long_description": "# rs_terminator Cookbook\n\n## Description\n\nThis cookbook is available at [https://github.com/ryancragun/rs_terminator-cookbook](https://github.com/ryancragun/rs_terminator-cookbook).\n\nThis cookbook provides base recipes to configure RightScale instances with \nproper safety tags as well as base recipes to configure a cron daemon that will \nrun the Terminator.\n\n## Requirements\n\nA RightScale enabled Server launched from RightScale.\n\n## Known issues\n\nCurrently only the \"rs_terminator::setup_client\" recipe is supported.  \n\"rs_terminator::setup_server\" and the 'terminator' LWRP will be added in a\nlater version.\n\n## Usage\n\nFor a client Server needing to apply tags to prevent termination, add the \n\"rs_terminator::setup_client\" recipe to the runlist and provide a valid \nnode[:rs_terminator][:client][:safe_tag] attribute that will applied.\n\nFor Server installation that will run the Terminator with a single configuration, \nadd the \"rs_terminator::setup_server\" recipe to the runlist and provide valid \nconfiguration attributes.\n\nTo configure multiple terminator configurations use the 'terminator' LWRP.\n\n## Attributes\n\nnode[:rs_terminator][:client][:safe_tag]\n\n# Recipes\n\n\"rs_terminator::default\"\n\"rs_terminator::setup_client\"\n\"rs_terminator::setup_server\"\n\n# Author\n\nAuthor:: Ryan_Cragun (<ryan@rightscale.com>)\n",
+  "maintainer": "Ryan_Cragun",
+  "maintainer_email": "ryan@rightscale.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "rs_terminator/safe_tag": {
+      "display_name": "Safe Tag",
+      "description": "A tag or array of tags that prevents the Terminator from terminating a taggable Resource\n Example: rs_terminator:save=true",
+      "required": "optional",
+      "default": "rs_terminator:save=true",
+      "recipes": [
+        "rs_terminator::setup_client",
+        "rs_terminator::setup_server"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "rs_terminator::default": "Installs rs_terminator gem",
+    "rs_terminator::setup_client": "Configures Server as a Terminator client",
+    "rs_terminator::setup_server": "Configures Terminator as a Terminator Server"
+  },
+  "version": "0.0.1"
+}

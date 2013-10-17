@@ -1,0 +1,6 @@
+{
+  "rs_terminator": { "client": { "safe_tag": "application:environment=production"}},
+  "run_list": [
+    "recipe[rs_terminator::setup_client]"
+  ]
+}
