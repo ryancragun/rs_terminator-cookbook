@@ -10,7 +10,7 @@ supports "ubuntu"
 supports "centos"
 supports "redhat"
 
-#depends "rightscale"
+depends "rightscale"
 
 recipe "rs_terminator::default", "Installs rs_terminator gem"
 recipe "rs_terminator::setup_client", "Configures Server as a Terminator client"
