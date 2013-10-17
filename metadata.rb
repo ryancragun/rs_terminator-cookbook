@@ -16,7 +16,7 @@ recipe "rs_terminator::default", "Installs rs_terminator gem"
 recipe "rs_terminator::setup_client", "Configures Server as a Terminator client"
 recipe "rs_terminator::setup_server", "Configures Terminator as a Terminator Server"
 
-attribute "rs_terminator/safe_tag",
+attribute "rs_terminator/client/safe_tag",
   :display_name => "Safe Tag",
   :description => 
     "A tag or array of tags that prevents the Terminator from terminating" +
