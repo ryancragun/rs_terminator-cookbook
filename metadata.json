@@ -23,7 +23,7 @@
   "replacing": {
   },
   "attributes": {
-    "rs_terminator/safe_tag": {
+    "rs_terminator/client/safe_tag": {
       "display_name": "Safe Tag",
       "description": "A tag or array of tags that prevents the Terminator from terminating a taggable Resource\n Example: rs_terminator:save=true",
       "required": "optional",
